@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class BallHit : MonoBehaviour
 {
-    private int counter;
+    private int counter = 0;
+
+    [SerializeField]
+    private GameObject ballCounter;
 
     // Start is called before the first frame update
     void Start()
     {
-        counter = 0;
     }
 
     // Update is called once per frame
@@ -26,7 +28,8 @@ public class BallHit : MonoBehaviour
             Debug.Log(counter);
 
 
-            //counter.GetComponent<UnityEngine.UI.Text>().text = ammo.ToString();
+            ballCounter.GetComponent<UnityEngine.UI.Text>().text = counter.ToString();
+            ballCounter.GetComponent<TextMesh>().text = counter.ToString();
         }
     }
 }

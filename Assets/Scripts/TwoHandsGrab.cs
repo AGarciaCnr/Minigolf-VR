@@ -24,11 +24,11 @@ public class TwoHandsGrab : XRGrabInteractable
                 XRInteractionUpdateOrder.UpdatePhase.Dynamic == updatePhase)
         {
             //Debug.Log("Tho");
-            ProccessThoHandsGrab();
+            ProccessTwoHandsGrab();
         }
     }
 
-    private void ProccessThoHandsGrab()
+    private void ProccessTwoHandsGrab()
     {
         Transform firstAttatch = GetAttachTransform(null);
         Transform firstHand = interactorsSelecting[0].transform;
