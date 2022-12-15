@@ -7,11 +7,16 @@ public class TwoHandsGrab : XRGrabInteractable
 {
     [SerializeField]
     private Transform _seconAttatchTransform;
+    private float       m_speed = 5f;
+
+    private Rigidbody   m_palo;
+
 
     protected override void Awake()
     {
         base.Awake();
         selectMode = InteractableSelectMode.Multiple;
+        m_palo = GetComponent<Rigidbody>();
     }
 
     public override void ProcessInteractable(XRInteractionUpdateOrder.UpdatePhase updatePhase)
@@ -47,7 +52,13 @@ public class TwoHandsGrab : XRGrabInteractable
 
         Vector3 targetPosition = firstHand.position + targetRotation * localDirectionFromHandleToBase;
 
-        transform.SetPositionAndRotation(targetPosition, targetRotation);
+        //transform.SetPositionAndRotation(targetPosition, targetRotation);
+        //m_palo.isKinematic = true;
+        m_palo.position = targetPosition;
+        //m_palo.rotation = targetRotation;
+        //m_palo.MovePosition(targetPosition * Time.deltaTime * m_speed);
+
+        m_palo.MoveRotation(targetRotation);
     }
 
     protected override void Grab()

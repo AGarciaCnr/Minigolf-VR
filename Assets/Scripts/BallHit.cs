@@ -25,11 +25,9 @@ public class BallHit : MonoBehaviour
         if (collision.gameObject.tag == "pelota")
         {
             counter++;
-            Debug.Log(counter);
-
-
+            //Debug.Log(counter);
             ballCounter.GetComponent<UnityEngine.UI.Text>().text = counter.ToString();
-            ballCounter.GetComponent<TextMesh>().text = counter.ToString();
+            //ballCounter.GetComponent<TextMesh>().text = counter.ToString();
         }
     }
 }
