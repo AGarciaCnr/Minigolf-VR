@@ -6,6 +6,7 @@ TagManager:
   tags:
   - escalera
   - pelota
+  - oculto
   layers:
   - Default
   - TransparentFX
