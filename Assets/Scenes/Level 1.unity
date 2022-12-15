@@ -2724,6 +2724,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2402942838556904643, guid: ea67c3b0b545125438979ada2097bd63, type: 3}
+      propertyPath: pelota
+      value: 
+      objectReference: {fileID: 366864570}
     - target: {fileID: 2402942838556904649, guid: ea67c3b0b545125438979ada2097bd63, type: 3}
       propertyPath: m_RootOrder
       value: 1
