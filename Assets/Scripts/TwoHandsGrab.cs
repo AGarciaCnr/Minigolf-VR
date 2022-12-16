@@ -11,7 +11,8 @@ public class TwoHandsGrab : XRGrabInteractable
 
     private Rigidbody   m_palo;
 
-
+    public bool droped = true;
+    
     protected override void Awake()
     {
         base.Awake();
@@ -74,6 +75,7 @@ public class TwoHandsGrab : XRGrabInteractable
         if (!isSelected)
         {
             base.Drop();
+            droped = true;
         }
     }
 
