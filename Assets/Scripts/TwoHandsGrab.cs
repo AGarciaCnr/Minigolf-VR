@@ -10,8 +10,7 @@ public class TwoHandsGrab : XRGrabInteractable
     private float       m_speed = 5f;
 
     private Rigidbody   m_palo;
-
-    public bool droped = true;
+    public int twoHandsGrabbed = 0;
     
     protected override void Awake()
     {
@@ -24,6 +23,7 @@ public class TwoHandsGrab : XRGrabInteractable
     {
         if (this.interactorsSelecting.Count == 1)
         {
+            twoHandsGrabbed = 1;
             base.ProcessInteractable(updatePhase);
         }
         else if (this.interactorsSelecting.Count == 2 &&
@@ -36,6 +36,7 @@ public class TwoHandsGrab : XRGrabInteractable
 
     private void ProccessTwoHandsGrab()
     {
+        twoHandsGrabbed = 2;
         Transform firstAttatch = GetAttachTransform(null);
         Transform firstHand = interactorsSelecting[0].transform;
         Transform secondAttatch = _seconAttatchTransform;
@@ -72,10 +73,11 @@ public class TwoHandsGrab : XRGrabInteractable
 
     protected override void Drop()
     {
+        Debug.Log("Drop");
+        twoHandsGrabbed = 0;
         if (!isSelected)
         {
             base.Drop();
-            droped = true;
         }
     }
 

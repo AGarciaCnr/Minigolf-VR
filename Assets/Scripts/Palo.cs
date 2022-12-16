@@ -14,7 +14,7 @@ public class Palo : MonoBehaviour
 
     private void Update()
     {
-        if (droped)
+        if (droped && ((GameManager)GameManager.Instance).twoHandsGrab.GetComponent<TwoHandsGrab>().twoHandsGrabbed == 2)
         {
             this.transform.position = ((GameManager)GameManager.Instance).personaje.transform.position;
         }
