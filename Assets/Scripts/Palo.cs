@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor.XR.LegacyInputHelpers;
 using UnityEngine;
 
 public class Palo : MonoBehaviour
@@ -14,12 +16,12 @@ public class Palo : MonoBehaviour
 
     private void Update()
     {
-        if (droped && ((GameManager)GameManager.Instance).twoHandsGrab.GetComponent<TwoHandsGrab>().twoHandsGrabbed == 0 && control)
+        if (droped && ((GameManager)GameManager.Instance).twoHandsGrab.GetComponent<TwoHandsGrab>().twoHandsGrabbed == 0)
         {
             if (!colocado)
             {
                 this.transform.parent = ((GameManager)GameManager.Instance).personaje.transform;
-                this.transform.position = ((GameManager)GameManager.Instance).personaje.transform.position + new Vector3(0.5f, -1.5f, 0.5f);
+                this.transform.position = ((GameManager)GameManager.Instance).personaje.transform.GetChild(1).transform.position;
                 this.transform.rotation = Quaternion.Euler(new Vector3(-75, 0, 90));
                 colocado = true;
             }
@@ -30,7 +32,7 @@ public class Palo : MonoBehaviour
             colocado = false;
         }
     }
-
+    
     public void IsDroped(bool dp)
     {
         Debug.Log("Droped");
