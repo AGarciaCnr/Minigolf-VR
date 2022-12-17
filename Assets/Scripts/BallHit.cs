@@ -31,12 +31,13 @@ public class BallHit : MonoBehaviour
 
         if (collision.gameObject.tag == "pelota" && timer >= 0.5f)
         {
+            Debug.Log(timer);
             timer = 0.0f;
 
             ((GameManager)GameManager.Instance).ball.GetComponent<Rigidbody>().velocity = this.GetComponent<Rigidbody>().velocity * velocityMultiplayer;
 
             counter++;
-            //Debug.Log(counter);
+            Debug.Log(counter);
             ballCounter.GetComponent<UnityEngine.UI.Text>().text = counter.ToString();
             //ballCounter.GetComponent<TextMesh>().text = counter.ToString();
         }
