@@ -6,11 +6,10 @@ using UnityEngine;
 public class Hole : MonoBehaviour
 {
     private static string tag_pelota = "pelota";
-
-    public bool isHole = false;
-
     public GameObject next_hoyo;
     public GameObject pelota;
+
+    public bool isHole = false;
 
 
     void Start()

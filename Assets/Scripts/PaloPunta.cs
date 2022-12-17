@@ -6,7 +6,7 @@ public class PaloPunta : MonoBehaviour
 {
 
     public GameObject punta, newPunta;
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
 
         if (collision.gameObject.Equals(punta))
