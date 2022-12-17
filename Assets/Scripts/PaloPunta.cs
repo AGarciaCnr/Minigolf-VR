@@ -11,7 +11,7 @@ public class PaloPunta : MonoBehaviour
 
         if (collision.gameObject.Equals(punta))
         {
-
+            Debug.Log("funciona");
             newPunta.SetActive(true);
             punta.SetActive(false);
 
