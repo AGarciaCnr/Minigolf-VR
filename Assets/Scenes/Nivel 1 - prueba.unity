@@ -3506,7 +3506,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 512218911}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.29125023, y: 1, z: -1}
+  m_LocalPosition: {x: 0.29125023, y: 1, z: -5.95}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6282,14 +6282,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 743482602}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.646, y: 2.339, z: -1.043}
+  m_LocalRotation: {x: -0.6357147, y: -0, z: -0, w: 0.7719241}
+  m_LocalPosition: {x: 7.649, y: 0.073, z: -3.051}
   m_LocalScale: {x: 0.015, y: 0.015, z: 0.015}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -78.946, y: 0, z: 0}
 --- !u!114 &743482609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9783,6 +9783,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1bd81a40e892174b9d1278f30fe903a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  next_hoyo: {fileID: 0}
+  pelota: {fileID: 0}
+  isHole: 0
 --- !u!65 &1283837595
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17451,8 +17454,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61116a5e83bd7e9409c67fe486413e11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  totalScore: 0
   _twoHandsGrab: {fileID: 743482602}
   _personaje: {fileID: 512218911}
+  _palo: {fileID: 743482602}
+  _hole: {fileID: 0}
+  _ball: {fileID: 1909192534}
 --- !u!4 &2010767540
 Transform:
   m_ObjectHideFlags: 0
