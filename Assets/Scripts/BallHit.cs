@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BallHit : MonoBehaviour
 {
-    private int counter = 0;
+    public int counter = 0;
 
     [SerializeField]
     private GameObject ballCounter;
