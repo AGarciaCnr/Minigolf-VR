@@ -6,6 +6,9 @@ public class BallHit : MonoBehaviour
 {
     public int counter = 0;
 
+    [SerializeField]
+    private float velocityMultiplayer = 2.5f;
+
     private float timer = 0.0f;
 
     [SerializeField]
@@ -24,15 +27,13 @@ public class BallHit : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision collision)
-    {
-        //Si ha pasado mas de 1 segundo desde que se ha colisionado con el palo
-        
+    {        
 
         if (collision.gameObject.tag == "pelota" && timer >= 0.5f)
         {
             timer = 0.0f;
 
-            ((GameManager)GameManager.Instance).ball.GetComponent<Rigidbody>().velocity = this.GetComponent<Rigidbody>().velocity * 2;
+            ((GameManager)GameManager.Instance).ball.GetComponent<Rigidbody>().velocity = this.GetComponent<Rigidbody>().velocity * velocityMultiplayer;
 
             counter++;
             //Debug.Log(counter);

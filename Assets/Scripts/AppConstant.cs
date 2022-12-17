@@ -8,6 +8,5 @@ public class AppConstant : MonoBehaviour
     {
         public const string SCENE_LEVEL_1 = "Nivel 1 - prueba";
         public const string SCENE_MENU = "Menu";
-        
     }
 }
