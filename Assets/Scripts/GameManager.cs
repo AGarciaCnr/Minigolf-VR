@@ -23,6 +23,9 @@ public class GameManager : Singleton
     [SerializeField]
     private GameObject _hole;
 
+    [SerializeField]
+    private GameObject _ball;
+
     public GameObject twoHandsGrab
     {
         get
@@ -52,6 +55,14 @@ public class GameManager : Singleton
         get
         {
             return _hole;
+        }
+    }
+
+    public GameObject ball
+    {
+        get
+        {
+            return _ball;
         }
     }
 
