@@ -16,8 +16,8 @@ public class Palo : MonoBehaviour
     {
         if (droped && ((GameManager)GameManager.Instance).twoHandsGrab.GetComponent<TwoHandsGrab>().twoHandsGrabbed ==0)
         {
-            this.transform.position = ((GameManager)GameManager.Instance).personaje.transform.position + new Vector3(1, 0, 1);
-            this.transform.rotation = ((GameManager)GameManager.Instance).personaje.transform.rotation;
+            this.transform.position = ((GameManager)GameManager.Instance).personaje.transform.position + new Vector3(0.5f, 0, 0.5f);
+            this.transform.rotation = Quaternion.Euler(new Vector3(-75, 0, 90));
         }
     }
 
