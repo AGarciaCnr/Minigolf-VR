@@ -8,6 +8,8 @@ public class Palo : MonoBehaviour
 {
     public bool droped;
     private bool colocado = false;
+    private float timer = 0.0f;
+    private bool soltado = true;
 
     void Start()
     {
@@ -18,8 +20,19 @@ public class Palo : MonoBehaviour
     {
         if (droped && ((GameManager)GameManager.Instance).twoHandsGrab.GetComponent<TwoHandsGrab>().twoHandsGrabbed == 0)
         {
+<<<<<<< Updated upstream
             Debug.Log("Dentro 22");
             if (!colocado)
+=======
+            if (soltado)
+            {
+                timer = 0.0f;
+                soltado = false;
+            }
+            timer += Time.deltaTime;
+
+            if (!colocado && timer > 2.0f)
+>>>>>>> Stashed changes
             {
                 Debug.Log("entro");
                 this.transform.parent = ((GameManager)GameManager.Instance).personaje.transform;
@@ -33,6 +46,7 @@ public class Palo : MonoBehaviour
             Debug.Log("salgo");
             this.transform.SetParent(null);
             colocado = false;
+            soltado = true;
         }
     }
     
