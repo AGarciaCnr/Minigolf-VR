@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : Singleton
@@ -25,6 +26,9 @@ public class GameManager : Singleton
 
     [SerializeField]
     private GameObject _ball;
+
+    [SerializeField]
+    private GameObject _reloj;
 
     public GameObject twoHandsGrab
     {
@@ -66,6 +70,16 @@ public class GameManager : Singleton
         }
     }
 
+    public GameObject reloj
+    {
+        get
+        {
+            return _reloj;
+        }
+    }
+
+    
+
     public void Update()
     {
         if (hole.GetComponent<Hole>().isHole)
@@ -75,5 +89,8 @@ public class GameManager : Singleton
             holeCounter++;
             palo.GetComponent<BallHit>().counter = 0;
         }
+        TextMeshPro textReloj = reloj.GetComponentInChildren<TextMeshPro>();
+        Debug.Log("Hola");
+        textReloj.SetText("Score: " + totalScore.ToString());
     }
 }
