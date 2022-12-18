@@ -10,6 +10,7 @@ public class Hole : MonoBehaviour
     public GameObject pelota;
     public GameObject next_escenario;
 
+    public bool pseudoHoyo = false;
     public bool isHole = false;
 
 
@@ -23,7 +24,11 @@ public class Hole : MonoBehaviour
         if (other.gameObject.tag == tag_pelota)
         {
             Debug.Log("HOYO!!!");
-            isHole = true;
+
+            if(!pseudoHoyo)
+                isHole = true;
+
+
             next_escenario.SetActive(true);
             pelota.GetComponent<Transform>().position = next_hoyo.transform.position;
             pelota.GetComponent<Rigidbody>().velocity = Vector3.zero;
