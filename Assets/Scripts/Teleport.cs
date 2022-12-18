@@ -18,7 +18,7 @@ public class Teleport : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (buttonPressed.action.WasPressedThisFrame())
+        if (buttonPressed.action.WasPressedThisFrame() && ((GameManager)GameManager.Instance).twoHandsGrab.GetComponent<TwoHandsGrab>().twoHandsGrabbed == 0)
             teleportToBall();
 
     }
