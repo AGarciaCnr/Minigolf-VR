@@ -20,10 +20,6 @@ public class Palo : MonoBehaviour
     {
         if (droped && ((GameManager)GameManager.Instance).twoHandsGrab.GetComponent<TwoHandsGrab>().twoHandsGrabbed == 0)
         {
-<<<<<<< Updated upstream
-            Debug.Log("Dentro 22");
-            if (!colocado)
-=======
             if (soltado)
             {
                 timer = 0.0f;
@@ -32,9 +28,7 @@ public class Palo : MonoBehaviour
             timer += Time.deltaTime;
 
             if (!colocado && timer > 2.0f)
->>>>>>> Stashed changes
             {
-                Debug.Log("entro");
                 this.transform.parent = ((GameManager)GameManager.Instance).personaje.transform;
                 this.transform.position = ((GameManager)GameManager.Instance).personaje.transform.GetChild(1).transform.position;
                 this.transform.rotation = Quaternion.Euler(new Vector3(-75, 0, 90));
@@ -43,7 +37,6 @@ public class Palo : MonoBehaviour
         }
         else
         {
-            Debug.Log("salgo");
             this.transform.SetParent(null);
             colocado = false;
             soltado = true;
