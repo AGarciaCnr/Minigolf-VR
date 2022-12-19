@@ -19,6 +19,7 @@ public class Gun : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("olawenas");
         if (other.gameObject.tag == "cargador")
         {
             recargar();
@@ -34,7 +35,7 @@ public class Gun : MonoBehaviour
 
         GameObject x = Object.Instantiate<GameObject>(this.proyectile);
 
-        x.transform.position = this.transform.position + this.transform.forward * 0.14f + this.transform.up * 0.035f;
+        x.transform.position = this.transform.position + this.transform.forward * 0.38f + this.transform.up * 0.045f;
         x.transform.rotation = this.transform.rotation;
         x.GetComponent<Rigidbody>().AddForce(this.transform.forward * 1000f);
 

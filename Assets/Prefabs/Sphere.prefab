@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2147006029678917729}
   - component: {fileID: 8454123341565180026}
   - component: {fileID: -5238484493589575981}
+  - component: {fileID: -7542027678003121596}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: bala
@@ -113,4 +114,16 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 3
+--- !u!114 &-7542027678003121596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522838340507568977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85abf9ef7c82dac449e7c4d40fc7b518, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
