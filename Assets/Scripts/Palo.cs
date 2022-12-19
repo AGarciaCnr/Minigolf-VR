@@ -24,6 +24,9 @@ public class Palo : MonoBehaviour
             {
                 timer = 0.0f;
                 soltado = false;
+                //gameObject.GetComponent<Rigidbody>().useGravity = true;
+                gameObject.GetComponent<Rigidbody>().isKinematic = false;
+                gameObject.GetComponent <Rigidbody>().useGravity = true;
             }
             timer += Time.deltaTime;
 
@@ -33,6 +36,8 @@ public class Palo : MonoBehaviour
                 this.transform.position = ((GameManager)GameManager.Instance).personaje.transform.GetChild(1).transform.position;
                 this.transform.rotation = Quaternion.Euler(new Vector3(-75, 0, 90));
                 colocado = true;
+                //gameObject.GetComponent<Rigidbody>().useGravity= false;
+                gameObject.GetComponent<Rigidbody>().isKinematic = true;
             }
         }
         else

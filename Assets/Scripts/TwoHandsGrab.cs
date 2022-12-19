@@ -42,7 +42,7 @@ public class TwoHandsGrab : XRGrabInteractable
         Transform secondAttatch = _seconAttatchTransform;
         Transform secondHand = interactorsSelecting[1].transform;
 
-        /*Vector3 directionBetweenHands = secondHand.position - firstHand.position;
+        Vector3 directionBetweenHands = secondHand.position - firstHand.position;
         Vector3 directionBetweenAttatch = secondAttatch.position - firstAttatch.position;
 
         Quaternion rotationFromAttToForward = Quaternion.FromToRotation(directionBetweenAttatch, this.transform.forward);
@@ -60,10 +60,11 @@ public class TwoHandsGrab : XRGrabInteractable
         //m_palo.rotation = targetRotation;
         //m_palo.MovePosition(targetPosition * Time.deltaTime * m_speed);
 
-        m_palo.MoveRotation(targetRotation);*/
+        m_palo.MoveRotation(targetRotation);
 
-        this.GetComponentInParent<Transform>().position = firstHand.position;
-        this.GetComponentInParent<Transform>().LookAt(secondHand);
+        //this.GetComponent<Transform>().position = secondHand.position;
+        //this.GetComponent<Transform>().LookAt(firstHand);
+        //Debug.Log(secondHand.name + " " + firstHand.name);
     }
 
     protected override void Grab()

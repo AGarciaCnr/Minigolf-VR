@@ -117,6 +117,7 @@ Library: lib_burst_generated
 --compilation-defines=ENABLE_TIMELINE
 --compilation-defines=ENABLE_INPUT_SYSTEM
 --compilation-defines=ENABLE_LEGACY_INPUT_MANAGER
+--compilation-defines=PROBUILDER_EXPERIMENTAL_FEATURES
 --compilation-defines=INPUT_SYSTEM_1_4_OR_NEWER
 --compilation-defines=INPUT_SYSTEM_1_1_OR_NEWER
 --compilation-defines=ANIMATION_MODULE_PRESENT
