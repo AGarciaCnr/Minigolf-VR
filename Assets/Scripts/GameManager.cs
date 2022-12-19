@@ -29,6 +29,12 @@ public class GameManager : Singleton
     [SerializeField]
     private GameObject _reloj;
 
+    [SerializeField]
+    private GameObject _titulo;
+
+    [SerializeField]
+    private GameObject _final;
+
     public GameObject twoHandsGrab
     {
         get
@@ -77,6 +83,22 @@ public class GameManager : Singleton
         }
     }
 
+    public GameObject titulo
+    {
+        get
+        {
+            return _titulo;
+        }
+    }
+
+    public GameObject final
+    {
+        get
+        {
+            return _final;
+        }
+    }
+
     public void Start()
     {
         holeCounter = 0;
@@ -92,7 +114,18 @@ public class GameManager : Singleton
             holeCounter++;
             palo.GetComponent<BallHit>().counter = 0;
         }
+        
         TextMeshProUGUI textReloj = reloj.GetComponentInChildren<TextMeshProUGUI>();
         textReloj.SetText("Golpes:\n" + palo.GetComponent<BallHit>().counter.ToString() + "\n\nPuntuación:\n" + totalScore.ToString());
+
+        if (hole[0].GetComponent<Hole>().isHole)
+        {
+            titulo.SetActive(false);
+        }
+
+        if (hole[hole.Length - 1].GetComponent<Hole>().isHole)
+        {
+            final.SetActive(true);
+        }
     }
 }
