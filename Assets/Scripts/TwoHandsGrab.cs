@@ -62,8 +62,8 @@ public class TwoHandsGrab : XRGrabInteractable
 
         m_palo.MoveRotation(targetRotation);*/
 
-        this.GetComponentInParent<Transform>().position = firstAttatch.position;
-        this.GetComponentInParent<Transform>().LookAt(secondAttatch);
+        this.GetComponentInParent<Transform>().position = firstHand.position;
+        this.GetComponentInParent<Transform>().LookAt(secondHand);
     }
 
     protected override void Grab()
