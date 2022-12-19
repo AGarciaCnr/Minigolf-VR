@@ -126,6 +126,8 @@ public class GameManager : Singleton
         if (hole[hole.Length - 1].GetComponent<Hole>().isHole)
         {
             final.SetActive(true);
+            TextMeshProUGUI finalText = final.GetComponentInChildren<TextMeshProUGUI>();
+            finalText.SetText("Tu puntuación final ha sido: " + totalScore.ToString());
         }
     }
 }
