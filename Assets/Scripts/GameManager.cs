@@ -10,8 +10,7 @@ public class GameManager : Singleton
     private int ballCounter, holeCounter;
 
     private int holeReward = 100;
-
-
+    
     [SerializeField]
     private GameObject _twoHandsGrab;
 
@@ -22,7 +21,7 @@ public class GameManager : Singleton
     private GameObject _palo;
 
     [SerializeField]
-    private GameObject _hole;
+    private GameObject[] _hole;
 
     [SerializeField]
     private GameObject _ball;
@@ -54,7 +53,7 @@ public class GameManager : Singleton
         }
     }
 
-    public GameObject hole
+    public GameObject[] hole
     {
         get
         {
@@ -78,11 +77,15 @@ public class GameManager : Singleton
         }
     }
 
-    
+    public void Start()
+    {
+        holeCounter = 0;
+        ballCounter = 0;
+    }
 
     public void Update()
     {
-        if (hole.GetComponent<Hole>().isHole)
+        if (hole[holeCounter].GetComponent<Hole>().isHole)
         {
             ballCounter = palo.GetComponent<BallHit>().counter;
             totalScore += holeReward - ballCounter * 2;

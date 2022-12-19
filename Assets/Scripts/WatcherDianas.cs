@@ -8,6 +8,9 @@ public class WatcherDianas : MonoBehaviour
 
     public int dianasRestantes;
 
+    public GameObject restoDelNivel;
+    public GameObject quitarMuro;
+
     void Start()
     {
         dianasRestantes = dianas.Length;
@@ -18,6 +21,8 @@ public class WatcherDianas : MonoBehaviour
         if (dianasRestantes == 0)
         {
             Debug.Log("Has ganado");
+            restoDelNivel.SetActive(true);
+            quitarMuro.SetActive(false);
         }
     }
 }

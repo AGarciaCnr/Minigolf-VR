@@ -6,6 +6,7 @@ public class Gun : MonoBehaviour
 {
     [SerializeField]
     private GameObject proyectile;
+    
     private GameObject counter;
 
     private int maxAmmo;
@@ -14,7 +15,16 @@ public class Gun : MonoBehaviour
     void Start()
     {
         maxAmmo = 30;
-        recargar();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "cargador")
+        {
+            recargar();
+            Destroy(other.gameObject);
+            
+        }
     }
 
     public void disparar()
