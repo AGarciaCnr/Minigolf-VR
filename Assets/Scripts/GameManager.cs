@@ -89,8 +89,7 @@ public class GameManager : Singleton
             holeCounter++;
             palo.GetComponent<BallHit>().counter = 0;
         }
-        TextMeshPro textReloj = reloj.GetComponentInChildren<TextMeshPro>();
-        Debug.Log("Hola");
-        textReloj.SetText("Score: " + totalScore.ToString());
+        TextMeshProUGUI textReloj = reloj.GetComponentInChildren<TextMeshProUGUI>();
+        textReloj.SetText("Golpes:\n" + palo.GetComponent<BallHit>().counter.ToString() + "\n\nPuntuación:\n" + totalScore.ToString());
     }
 }

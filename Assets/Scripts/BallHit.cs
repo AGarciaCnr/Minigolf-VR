@@ -11,8 +11,8 @@ public class BallHit : MonoBehaviour
 
     private float timer = 0.0f;
 
-    [SerializeField]
-    private GameObject ballCounter;
+    /*[SerializeField]
+    private GameObject ballCounter;*/
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +38,7 @@ public class BallHit : MonoBehaviour
 
             counter++;
             Debug.Log(counter);
-            ballCounter.GetComponent<UnityEngine.UI.Text>().text = counter.ToString();
+            /*ballCounter.GetComponent<UnityEngine.UI.Text>().text = counter.ToString();*/
             //ballCounter.GetComponent<TextMesh>().text = counter.ToString();
         }
     }
